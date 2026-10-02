@@ -19,24 +19,27 @@ main{padding:0 16px 28px} .card{background:var(--card);border:1px solid var(--li
 </style>
 </head>
 <body>
-<header><h1>TRU <span>AI</span></h1><p class="sub">Ask for the source. A gap stays a gap. The reply is not a witness.</p></header>
-<div class="warn">It will answer when it does not know. That is the failure. Tell it to say not packed. Then check the part you will use. This page does not call a model.</div>
-<div class="bar"><input id="q" placeholder="source, gap, save…" enterkeyhint="search"><button id="send">Send</button></div>
+<header><h1>TRU <span>AI</span></h1><p class="sub">Nine steps. The reply is not a witness. This page does not call a model.</p></header>
+<div class="warn">It will answer when it does not know. Tell it to say not packed. Then check the part you will use.</div>
+<div class="bar"><input id="q" placeholder="step, source, save…" enterkeyhint="search"><button id="send">Send</button></div>
 <main id="out"></main>
 <script>
 const C=[
-{t:"What it is",d:"A model continues text. It is not a witness, not a memory of your life, and not the book it names. A fluent sentence is not a fact. The lanes on this shelf are the other way: a published step, or a gap."},
-{t:"The ask",d:"One job. The limit. The source you will accept. \"Ford from FM 21-76. Pole length if the manual gives it. If it does not, say not packed.\" A wide ask gets a wide invention."},
-{t:"The gap",d:"Tell it the missing part is allowed. A gap you can see is safer than a number it filled in. If it gives the number anyway, ask where that number is printed. If it cannot point, drop the number."},
-{t:"The check",d:"Check the part you will stake something on. A date. A dose. A verse. A length. Open the source, or do not use it. The other lanes exist so the checked part can live in a file."},
-{t:"What you send",d:"Do not send a password, a key, a private name, or a confession you would not say in a room. The chat is not your house. A saved file on the phone is."},
-{t:"What you keep",d:"Keep the checked answer, not the thread. Paste it into a file you can open with the radio off. TRU Code is the shape. TRU Rack is why the file still works when the hall does not."},
-{t:"Gap",d:"No model name, no hidden prompt, no way to make it ignore its limits. Those are not a use. They are a trick, and a trick is not a source."}
+{t:"1. Name the job",d:"Before you open the chat, write one sentence. What finished looks like. A pole length. A verse. A file. If you cannot name the job, you are not ready to ask."},
+{t:"2. Name the source",d:"Say which book, manual, or page you will accept. \"From FM 21-76.\" \"From the KJV, and quote it.\" A wide ask with no source gets a wide invention."},
+{t:"3. Allow the gap",d:"Add the line: if it is not in the source, say not packed. Do not fill it. A gap you can see is safer than a number it made up."},
+{t:"4. Send one ask",d:"Job, source, gap. Then stop. Do not stack five jobs in one message. Example: Ford from FM 21-76. Pole length if the manual gives it. If it does not, say not packed."},
+{t:"5. Send only what you would say in a room",d:"No password. No key. No private name. No confession. The chat is not your house. A file on the phone is."},
+{t:"6. Read for the claim you will use",d:"Ignore the rest of the paragraph. Mark the date, the dose, the length, the verse. That is the only part that has to be true."},
+{t:"7. Ask where it is printed",d:"If the claim matters, ask for the page or the verse. If it cannot point, drop the claim. Do not argue it into being true."},
+{t:"8. Open the source",d:"Check the pointed place yourself, or do not use it. The model is not the witness. The book is. Lifeline, Water, and Canonbound exist so the checked part has a home."},
+{t:"9. Save the checked part",d:"Paste what you verified into a file you can open with the radio off. Do not keep the thread as the record. TRU Code is the shape of the file. TRU Rack is why the file still works when the hall does not."},
+{t:"Gap",d:"No model name. No hidden prompt. No way to make it ignore its limits. A trick is not a step."}
 ];
 function esc(s){return String(s).replace(/[&<>]/g,c=>({"&":"&","<":"<",">":">"}[c]));}
-function card(x){return `<article class="card"><div class="k">AI</div><div class="big">${esc(x.t)}</div><div>${esc(x.d)}</div><div class="src">Use, not a model manual. A reply is not a witness.</div></article>`;}
+function card(x){return `<article class="card"><div class="k">STEP</div><div class="big">${esc(x.t)}</div><div>${esc(x.d)}</div><div class="src">Use. Not a model manual.</div></article>`;}
 function show(l){document.getElementById("out").innerHTML=l.map(card).join("");}
-function search(q){q=(q||"").trim().toLowerCase(); if(!q){show(C);return;} const h=C.filter(x=>(x.t+" "+x.d).toLowerCase().includes(q)); document.getElementById("out").innerHTML=h.length?h.map(card).join(""):`<article class="card"><div class="k">GAP</div><div class="big">Not packed</div><div>No invented source.</div></article>`;}
+function search(q){q=(q||"").trim().toLowerCase(); if(!q){show(C);return;} const h=C.filter(x=>(x.t+" "+x.d).toLowerCase().includes(q)); document.getElementById("out").innerHTML=h.length?h.map(card).join(""):`<article class="card"><div class="k">GAP</div><div class="big">Not packed</div><div>No invented step.</div></article>`;}
 document.getElementById("send").onclick=()=>search(document.getElementById("q").value);
 document.getElementById("q").onkeydown=e=>{if(e.key==="Enter") search(e.target.value);};
 show(C);
