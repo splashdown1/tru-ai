@@ -4,13 +4,13 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width,initial-scale=1">
 <meta name="theme-color" content="#10140f">
-<title>TRU AI</title>
+<title>TRU Synthetic Intelligence</title>
 <style>
 :root{--bg:#10140f;--ink:#e7f0dc;--dim:#a8b89a;--line:#2c3824;--leaf:#c6d86a;--card:#1a2216;--bad:#c4543a}
 *{box-sizing:border-box} body{margin:0;background:var(--bg);color:var(--ink);font:16px/1.45 Georgia,serif}
 button,input{font:inherit;color:inherit}
-header{padding:16px 16px 6px} h1{font-size:22px;letter-spacing:.14em;margin:0;font-weight:normal} h1 span{color:var(--leaf)}
-.sub{color:var(--dim);font-size:13px}
+header{padding:16px 16px 6px} h1{font-size:clamp(14px,5vw,22px);letter-spacing:clamp(.01em,.35vw,.1em);margin:0;font-weight:normal} h1 span{color:var(--leaf)}
+.sub{color:var(--dim);font-size:13px}.back{display:inline-block;margin:0 16px 8px;color:var(--leaf);font-size:13px;text-underline-offset:3px}
 .warn{margin:10px 16px;padding:10px 12px;border:1px solid var(--bad);border-radius:10px;font-size:14px}
 .bar{display:flex;gap:8px;padding:8px 16px} input{flex:1;background:#0c100a;border:1px solid var(--line);border-radius:8px;padding:10px}
 button{background:var(--leaf);color:#14180f;border:0;border-radius:8px;padding:10px 12px;font-weight:bold}
@@ -19,7 +19,7 @@ main{padding:0 16px 28px} .card{background:var(--card);border:1px solid var(--li
 </style>
 </head>
 <body>
-<header><h1>TRU <span>AI</span></h1><p class="sub">Nine steps. The reply is not a witness. This page does not call a model.</p></header>
+<header><h1>TRU <span>SYNTHETIC INTELLIGENCE</span></h1><p class="sub">Nine steps. The reply is not a witness. This page does not call a model.</p><a class="back" href="https://splashdown1.github.io/tru-shelf/portal/">← Back to the TRU Portal</a></header>
 <div class="warn">It will answer when it does not know. Tell it to say not packed. Then check the part you will use.</div>
 <div class="bar"><input id="q" placeholder="step, source, save…" enterkeyhint="search"><button id="send">Send</button></div>
 <main id="out"></main>
